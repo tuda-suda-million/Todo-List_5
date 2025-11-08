@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Minimalist Todo</title>
+</head>
+
+<body>
+  <main class="todo-app" role="application" aria-label="Minimalist Todo App">
+    <header class="header">
+      <div class="title">
+        <h1>Задачи</h1>
+        <p>Сфокусируйтесь на важном — минимализм помогает</p>
+      </div>
+      <div class="stats" aria-hidden="true">2 / 5</div>
+    </header>
+
+    <form class="add" onsubmit="return false" aria-label="Добавить задачу">
+      <input required id="todoName" type="text" placeholder="Добавить новую задачу..." aria-label="Новая задача" />
+      <button type="submit">Добавить</button>
+    </form>
+
+    <section class="list" aria-live="polite">
+      <!-- JS - code -->
+    </section>
+
+    <footer style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 13px;
+          color: var(--muted);
+        ">
+      <div>
+        <span>Сортировать: </span>
+        <select name="sort" id="sort">
+          <option value="row">По порядку</option>
+          <option value="all-checked">По выполненым</option>
+          <option value="all-unchecked">По невыполненым</option>
+        </select>
+      </div>
+      <div id="clean-completed" class="button">Очистить выполненные</div>
+    </footer>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
